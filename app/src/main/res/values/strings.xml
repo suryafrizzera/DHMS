@@ -11,4 +11,6 @@
     <string name="confirm_password">Confirm password</string>
     <string name="username">Username</string>
     <string name="email">Email</string>
+    <string name="doctor_registration">Doctor Registration</string>
+    <string name="first_name">First Name</string>
 </resources>
