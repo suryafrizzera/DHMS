@@ -73,15 +73,17 @@ public class doctor_signup extends AppCompatActivity {
                           user.put("email",mail);
                           String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
                           user.put("date created",mydate);
-                          doctor.add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                          doctor.document(mail).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                               @Override
-                              public void onSuccess(DocumentReference documentReference) {
+                              public void onSuccess(Void aVoid) {
+                                  finish();
                                   startActivity(new Intent(doctor_signup.this,doctor_registration.class));
 
                               }
                           }).addOnFailureListener(new OnFailureListener() {
                               @Override
                               public void onFailure(@NonNull Exception e) {
+
                                   Toast.makeText(doctor_signup.this,e.getMessage() + "Try again",Toast.LENGTH_SHORT)
                                           .show();
                               }
