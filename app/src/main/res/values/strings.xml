@@ -21,4 +21,9 @@
     <string name="qualification">Qualification</string>
     <string name="gender">Gender</string>
     <string name="submit">Submit</string>
+    <string name="profile_generated_succesfully">Profile Generated Succesfully</string>
+    <string name="patient_registration">Patient Registration</string>
+    <string name="existing_health_issues">Existing Health issues</string>
+    <string name="dob">DOB</string>
+    <string name="dd_mm_yyyy">DD/MM/YYYY</string>
 </resources>

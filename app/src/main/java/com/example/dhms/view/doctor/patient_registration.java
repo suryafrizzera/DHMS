@@ -20,18 +20,13 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.SetOptions;
-import com.google.firestore.v1.Document;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Objects;
 
-public class doctor_registration extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class patient_registration extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     FirebaseAuth auth ;
     FirebaseUser user ;
@@ -42,7 +37,7 @@ public class doctor_registration extends AppCompatActivity implements AdapterVie
     String[] genders = {"Male","Female"};
     Spinner sp;
     String gender="None";
-    EditText first_name,last_name,hospital,specialization,phone,mlicense,qualification;
+    EditText first_name,last_name,hospital,specialization,phone,mlicense,qualification,dob;
     Button submit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +50,7 @@ public class doctor_registration extends AppCompatActivity implements AdapterVie
         progressBar = findViewById(R.id.progressBar);
         specialization = findViewById(R.id.specialization_edittext);
         phone = findViewById(R.id.phone_edittext);
-        mlicense = findViewById(R.id.M_License_edittext);
+        mlicense = findViewById(R.id.Existing_health_edittext);
         qualification = findViewById(R.id.qualification_edittext);
         submit = findViewById(R.id.submit_button);
 
@@ -94,6 +89,7 @@ public class doctor_registration extends AppCompatActivity implements AdapterVie
                     String specialize = specialization.getText().toString().trim();
                     String mlicecseno = mlicense.getText().toString().trim();
                     String qualify = qualification.getText().toString().trim();
+                    String dob_txt = dob.getText().toString().trim();
 
 
 
@@ -106,6 +102,7 @@ public class doctor_registration extends AppCompatActivity implements AdapterVie
                     regdetails.put("Specialization",specialize);
                     regdetails.put("Medical License",mlicecseno);
                     regdetails.put("Qualification",qualify);
+                    regdetails.put("DOB",dob_txt);
 
                     db.collection("doctor").document(Objects.requireNonNull(user.getEmail())).set(regdetails, SetOptions.merge())
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -114,12 +111,12 @@ public class doctor_registration extends AppCompatActivity implements AdapterVie
                             progressBar.setVisibility(View.INVISIBLE);
                             submit.setVisibility(View.VISIBLE);
                             finish();
-                            startActivity(new Intent(doctor_registration.this,doctor_profile.class));
+                            startActivity(new Intent(patient_registration.this,doctor_profile.class));
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(doctor_registration.this,e.getMessage()
+                            Toast.makeText(patient_registration.this,e.getMessage()
                             ,Toast.LENGTH_SHORT).show();
                         }
                     });

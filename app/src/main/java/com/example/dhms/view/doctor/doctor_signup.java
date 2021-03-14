@@ -13,14 +13,11 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.dhms.R;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
@@ -77,7 +74,7 @@ public class doctor_signup extends AppCompatActivity {
                               @Override
                               public void onSuccess(Void aVoid) {
                                   finish();
-                                  startActivity(new Intent(doctor_signup.this,doctor_registration.class));
+                                  startActivity(new Intent(doctor_signup.this, patient_registration.class));
 
                               }
                           }).addOnFailureListener(new OnFailureListener() {

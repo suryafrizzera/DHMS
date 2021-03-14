@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme.noactionbar">
         <activity android:name=".view.patient.patient_registration"></activity>
         <activity android:name=".view.doctor.doctor_profile" />
-        <activity android:name=".view.doctor.doctor_registration" />
+        <activity android:name=".view.doctor.patient_registration" />
         <activity android:name=".view.patient.patient_signup" />
         <activity android:name=".view.patient.patient_login" />
         <activity android:name=".view.doctor.doctor_signup" />

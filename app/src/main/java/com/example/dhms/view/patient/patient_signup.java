@@ -13,8 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.dhms.R;
-import com.example.dhms.view.doctor.doctor_registration;
-import com.example.dhms.view.doctor.doctor_signup;
+import com.example.dhms.view.doctor.patient_registration;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
