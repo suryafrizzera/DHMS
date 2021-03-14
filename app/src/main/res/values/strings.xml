@@ -13,4 +13,12 @@
     <string name="email">Email</string>
     <string name="doctor_registration">Doctor Registration</string>
     <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone">Phone</string>
+    <string name="m_license">M-License</string>
+    <string name="hospital">Hospital</string>
+    <string name="doctor_specialization">Doctor Specialization</string>
+    <string name="qualification">Qualification</string>
+    <string name="gender">Gender</string>
+    <string name="submit">Submit</string>
 </resources>
